@@ -26,6 +26,7 @@ namespace EventDrivenProgramming
         {
             InitializeComponent();
             this.MouseUp += new MouseButtonEventHandler(MouseUpEvent);
+            //...
             
             
         }
@@ -42,8 +43,9 @@ namespace EventDrivenProgramming
 
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                control.Text = value;
+                control.Text = "";
                 System.Threading.Thread.Sleep(1000);
+                control.Text = value;
             }), DispatcherPriority.Background);
 
             control.Text += " AfterUpdate";
@@ -53,7 +55,8 @@ namespace EventDrivenProgramming
 
         private void StackPanel_Click(object sender, RoutedEventArgs e)
         {
-            UpdateTextControl(txt2, "Click event is bubbled to StackPanel");            
+            UpdateTextControl(txt2, "Click event is bubbled to StackPanel");
+            e.Handled = true;
         }
 
       
@@ -68,7 +71,7 @@ namespace EventDrivenProgramming
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             UpdateTextControl(txt1, "Button clicked");
-            e.Handled = true;
+           
         }
     }
 }
