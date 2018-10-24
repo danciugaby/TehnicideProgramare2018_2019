@@ -22,7 +22,7 @@ namespace WPFCustomRoutedEvent
         public string callEvent(String s)
         {
             composer = "";
-            composer += MyEvent(s);
+            composer += MyEvent(s) + Environment.NewLine;
             return composer;
         }
 

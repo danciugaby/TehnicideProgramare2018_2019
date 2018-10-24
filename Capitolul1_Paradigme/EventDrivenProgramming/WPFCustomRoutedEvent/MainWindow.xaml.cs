@@ -28,7 +28,9 @@ namespace WPFCustomRoutedEvent
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+
         {
+            atext.Text = "";
             atext.Text += evt.callEvent(@"c:\Program Files\Java\jdk1.8.0_161\bin\A.java");
         }
     }

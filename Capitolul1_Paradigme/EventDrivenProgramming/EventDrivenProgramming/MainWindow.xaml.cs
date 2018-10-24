@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -25,7 +26,10 @@ namespace EventDrivenProgramming
         {
             InitializeComponent();
             this.MouseUp += new MouseButtonEventHandler(MouseUpEvent);
+            
+            
         }
+        
         private void MouseUpEvent(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Clicked at X:" + e.GetPosition(this).X + " Y:"  + e.GetPosition(this).Y);
@@ -52,15 +56,19 @@ namespace EventDrivenProgramming
             UpdateTextControl(txt2, "Click event is bubbled to StackPanel");            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateTextControl(txt1, "Button clicked");            
-        }
+      
 
         private void Window_Click(object sender, RoutedEventArgs e)
         {
             UpdateTextControl(txt3, "Click event is bubbled to Window");
             
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateTextControl(txt1, "Button clicked");
+            e.Handled = true;
         }
     }
 }

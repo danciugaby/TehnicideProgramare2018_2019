@@ -14,9 +14,15 @@ namespace DelegateDemo
             int[] numbers = { 1, 2, 3, 4, 5 };
             int resultSum = computeAggregateValue(numbers, sum);
             Console.WriteLine("Result for sum: {0}", resultSum.ToString());
+
             int resultMin = computeAggregateValue(numbers, min);
             Console.WriteLine("Result for min: {0}", resultMin.ToString());
 
+            int resultDiff = computeAggregateValue(numbers, diff);
+            
+            Console.WriteLine("Result for diff: {0}", resultDiff.ToString());
+
+            
         }
         private static int computeAggregateValue(int[] values, AggMEthod method)
         {
@@ -37,6 +43,12 @@ namespace DelegateDemo
         {
             return a + b;
         }
+        private static int diff(int a, int b)
+        {
+            return a - b;
+        }
+
+        
 
     }
 }
