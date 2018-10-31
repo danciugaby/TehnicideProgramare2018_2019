@@ -83,10 +83,10 @@ namespace BackGroundWorker
                 if (backgroundWorker.CancellationPending)
                 {
                     e.Cancel = true;
-                    backgroundWorker.ReportProgress(0);
+                    backgroundWorker.ReportProgress(0); //here we raise event backgroundWorker_ProgressChanged
                     return;
                 }
-                this.backgroundWorker.ReportProgress(count * 100 / nodes.Count);
+                this.backgroundWorker.ReportProgress(count * 100 / nodes.Count); //here we raise event backgroundWorker_ProgressChanged
                 this.Dispatcher.Invoke((Action)(() =>
                 {
                     this.UpdateLayout();

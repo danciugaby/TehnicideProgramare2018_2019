@@ -44,6 +44,8 @@ namespace ThreadPoolSample
                 threadInfo.FileName = fd.FileName;             
         
                 ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessFile), threadInfo);
+                
+
             }
 
         }
