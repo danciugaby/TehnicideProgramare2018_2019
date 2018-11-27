@@ -35,7 +35,7 @@ namespace LogSample
                 if (fd.ShowDialog() == true)
                 {
 
-                    StreamReader fr = new StreamReader(fd.FileName);
+                    StreamReader fr = new StreamReader(fd.FileName + "lala");
                     String s;
                     while ((s = fr.ReadLine()) != null)
                     {

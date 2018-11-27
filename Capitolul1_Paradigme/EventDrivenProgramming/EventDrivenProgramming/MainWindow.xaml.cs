@@ -56,7 +56,7 @@ namespace EventDrivenProgramming
         private void StackPanel_Click(object sender, RoutedEventArgs e)
         {
             UpdateTextControl(txt2, "Click event is bubbled to StackPanel");
-            e.Handled = true;
+            
         }
 
       
