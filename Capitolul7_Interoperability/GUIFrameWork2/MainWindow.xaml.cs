@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using System.Runtime.InteropServices;
 
 namespace GUIFrameWork2
 {
@@ -23,10 +24,13 @@ namespace GUIFrameWork2
     public partial class MainWindow : Window
     {
         private string _path;
+        [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+        private static extern int MessageBox(IntPtr hWnd, string lpText, string lpCaption, uint uType);
 
         public MainWindow()
         {
-            InitializeComponent();
+           //MessageBox(System.IntPtr.Zero,"ceva","title",0);
+           InitializeComponent();
         }
         #region methods
         private void SetImageData(byte[] data)
@@ -62,7 +66,7 @@ namespace GUIFrameWork2
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message);
             }
 
         }

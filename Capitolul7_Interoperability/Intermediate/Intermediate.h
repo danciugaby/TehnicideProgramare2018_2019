@@ -21,7 +21,7 @@ extern bool DeleteObject(IntPtr handle);
 #pragma endregion
 
 namespace Intermediate {
-
+	
 	public ref class Mapper
 	{
 	public:

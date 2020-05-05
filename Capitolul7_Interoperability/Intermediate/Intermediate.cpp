@@ -23,6 +23,7 @@ namespace Intermediate
 		char * pathchar = MapToCPPArrayChar(path);
 		char * pathtosavechar = MapToCPPArrayChar(pathtosave);
 		Processer processer;
+		
 		cv::Mat image = processer.ProcessAndSaveImage(pathchar, pathtosavechar);
 		return ToBitmapSource(image);
 	}
