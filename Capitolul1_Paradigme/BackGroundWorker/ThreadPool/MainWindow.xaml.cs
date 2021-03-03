@@ -74,8 +74,8 @@ namespace ThreadPoolSample
                     lstBox.Items.Add(str);
                     count++;
                     this.prgbar.Value = count * 100 / nodes.Count;
-                    outval.Add(Thread.CurrentThread.ManagedThreadId.ToString());
-                    this.no_of_threads.Content += outval.ToString();
+                    //outval.Add(Thread.CurrentThread.ManagedThreadId.ToString());
+                    //this.no_of_threads.Content += outval.ToString();
                 }));
 
             }

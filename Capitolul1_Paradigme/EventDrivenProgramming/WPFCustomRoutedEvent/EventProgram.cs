@@ -22,13 +22,16 @@ namespace WPFCustomRoutedEvent
         public string callEvent(String s)
         {
             composer = "";
-            composer += MyEvent(s) + Environment.NewLine;
+            MyEvent(s);
+
             return composer;
         }
 
 
         private string Welcome(string user)
         {
+            composer += "Welcome " + user 
+                + Environment.NewLine;
             return "Welcome " + user;
         }
 
@@ -41,6 +44,7 @@ namespace WPFCustomRoutedEvent
             {
                 strb.Append(s);
             }
+            composer += strb;
             return strb.ToString();
         }
     }

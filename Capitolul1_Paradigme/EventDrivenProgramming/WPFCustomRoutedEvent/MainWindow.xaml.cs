@@ -31,7 +31,7 @@ namespace WPFCustomRoutedEvent
 
         {
             atext.Text = "";
-            atext.Text += evt.callEvent(@"c:\Program Files\Java\jdk1.8.0_161\bin\A.java");
+            atext.Text += evt.callEvent(@"../../MainWindow.xaml");
         }
     }
 }

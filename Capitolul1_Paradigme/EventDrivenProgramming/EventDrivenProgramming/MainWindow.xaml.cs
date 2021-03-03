@@ -20,18 +20,19 @@ namespace EventDrivenProgramming
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            this.MouseUp += new MouseButtonEventHandler(MouseUpEvent);
+            this.MouseUp += new MouseButtonEventHandler(MouseUpEvent); //event registration
             //...
             //...newfeature adds
             
         }
         
-        private void MouseUpEvent(object sender, MouseButtonEventArgs e)
+        private void MouseUpEvent(object sender, MouseButtonEventArgs e) //event handler
         {
             MessageBox.Show("Clicked at X:" + e.GetPosition(this).X + " Y:"  + e.GetPosition(this).Y);
         }
@@ -51,15 +52,15 @@ namespace EventDrivenProgramming
             control.Text += " AfterUpdate";
             
 
-        }      
+        }
 
         private void StackPanel_Click(object sender, RoutedEventArgs e)
         {
             UpdateTextControl(txt2, "Click event is bubbled to StackPanel");
-            
+            e.Handled = true;
         }
 
-      
+
 
         private void Window_Click(object sender, RoutedEventArgs e)
         {
@@ -73,5 +74,6 @@ namespace EventDrivenProgramming
             UpdateTextControl(txt1, "Button clicked");
            
         }
+        
     }
 }
