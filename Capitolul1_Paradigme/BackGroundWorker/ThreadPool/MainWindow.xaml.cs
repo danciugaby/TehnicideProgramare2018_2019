@@ -20,7 +20,7 @@ namespace ThreadPoolSample
 {
     class ThreadInfo
     {
-        public string FileName { get; set; }       
+        public string FileName { get; set; }
     }
 
     /// <summary>
@@ -28,6 +28,7 @@ namespace ThreadPoolSample
     /// </summary>
     public partial class MainWindow : Window
     {
+        volatile HashSet<String> outval = new HashSet<String>();
         public MainWindow()
         {
             InitializeComponent();
@@ -41,10 +42,10 @@ namespace ThreadPoolSample
             if (fd.ShowDialog() == true)
             {
                 ThreadInfo threadInfo = new ThreadInfo();
-                threadInfo.FileName = fd.FileName;             
-        
+                threadInfo.FileName = fd.FileName;
+
                 ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessFile), threadInfo);
-                
+                ThreadPool.QueueUserWorkItem(new WaitCallback(ProcessFile), threadInfo);
 
             }
 
@@ -53,7 +54,7 @@ namespace ThreadPoolSample
         void ProcessFile(object a)
         {
             XmlDocument parsedStream = new XmlDocument();
-            parsedStream.Load(((ThreadInfo) a).FileName);
+            parsedStream.Load(((ThreadInfo)a).FileName);
             XmlNodeList nodes = parsedStream.DocumentElement.SelectNodes("T");
             string strnodes = "";
             this.Dispatcher.Invoke((Action)(() =>
@@ -73,12 +74,14 @@ namespace ThreadPoolSample
                     lstBox.Items.Add(str);
                     count++;
                     this.prgbar.Value = count * 100 / nodes.Count;
+                    outval.Add(Thread.CurrentThread.ManagedThreadId.ToString());
+                    this.no_of_threads.Content += outval.ToString();
                 }));
-               
 
             }
+           
         }
-        
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 

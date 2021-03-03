@@ -12,6 +12,7 @@
         <Label Content="Status" HorizontalAlignment="Left" Margin="422,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.012,-0.712"/>
         <ProgressBar x:Name="prgbar" HorizontalAlignment="Left" Height="22" Margin="422,153,0,0" VerticalAlignment="Top" Width="220" SmallChange="1"/>
         <Button Content="Cancel Load" HorizontalAlignment="Left" Margin="606,71,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Label x:Name="no_of_threads" Content="No of threads" HorizontalAlignment="Left" Height="31" Margin="422,200,0,0" VerticalAlignment="Top" Width="119"/>
 
     </Grid>
 </Window>
