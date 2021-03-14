@@ -11,12 +11,21 @@ namespace BlackBoard
         public List<KnowledgeWorker> knowledgeWorkers;
         protected Dictionary<string, ControlData> data;
         public Control control;
+        static readonly BlackBoardManager INSTANCE = new BlackBoardManager();
 
         public BlackBoardManager()
         {
             this.knowledgeWorkers = new List<KnowledgeWorker>();
             this.control = new Control(this);
             this.data = new Dictionary<string, ControlData>();
+
+        }
+        public static BlackBoardManager Instance
+        {
+            get
+            {
+                return INSTANCE;
+            }
         }
 
         public void addKnowledgeWorker(KnowledgeWorker newKnowledgeWorker)

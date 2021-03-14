@@ -27,7 +27,7 @@ namespace WorkWithBlackBoard
             foreach (KeyValuePair<string, ControlData> cdata in this.blackboard.inspect())
             {
                 if (cdata.Value.problem == "PrimeNumbers"
-                        && cdata.Value.input != null
+                        && cdata.Value.input != null 
                         && cdata.Value.input.Length > 0
                         && valueIsOk(cdata.Value.input[0])
                         && (int)cdata.Value.input[0] < this.MAX)
