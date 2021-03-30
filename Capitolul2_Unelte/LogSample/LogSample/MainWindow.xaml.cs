@@ -44,7 +44,7 @@ namespace LogSample
                 }
             }
             catch (Exception ex)
-            {
+            {               
                 Constants.Logger.Error("Error at reading file " + fd.FileName, ex);
             }
         }

@@ -16,6 +16,11 @@ namespace UnitTesting
         {
             return a + b;
         }
+        public double Multiply(double a, double b)
+        {
+            
+            return a*b;
+        }
 
         public int Sum(int[] a)
         {

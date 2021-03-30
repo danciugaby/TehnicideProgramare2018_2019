@@ -20,7 +20,7 @@ namespace UnitTesting
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {        
+    {
         public MainWindow()
         {
             InitializeComponent();
@@ -43,5 +43,15 @@ namespace UnitTesting
             txtUser.Text = "me";
             txtPass.Text = "mypass";
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Arithmetics a = new Arithmetics();
+            if (a.Sum(Int32.Parse(txtUser.Text), Int32.Parse(txtPass.Text)) == 3)
+                MessageBox.Show("passed");
+            else
+                MessageBox.Show("failed");
+        }
+
     }
 }

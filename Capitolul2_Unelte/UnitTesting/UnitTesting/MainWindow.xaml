@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Height="43" Margin="335,57,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click"/>
+        <Button Content="Validate User" HorizontalAlignment="Left" Height="43" Margin="335,57,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click"/>
         <Label Content="User" HorizontalAlignment="Left" Height="22" Margin="120,41,0,0" VerticalAlignment="Top" Width="66"/>
         <TextBox Name ="txtUser" HorizontalAlignment="Left" Height="32" Margin="120,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
         <Label Content="Password" HorizontalAlignment="Left" Height="22" Margin="120,102,0,0" VerticalAlignment="Top" Width="66"/>
         <TextBox Name ="txtPass" HorizontalAlignment="Left" Height="32" Margin="120,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <Button Content="Validate Sum" HorizontalAlignment="Left" Height="43" Margin="335,134,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

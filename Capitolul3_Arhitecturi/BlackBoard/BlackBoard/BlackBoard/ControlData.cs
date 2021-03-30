@@ -9,7 +9,7 @@ namespace BlackBoard
     public class ControlData : ICloneable
     {
         public string problem;
-        public object[] input;
+        public object[] input; 
         public object[] output;
         public string updateby;
         public DateTime updated;
